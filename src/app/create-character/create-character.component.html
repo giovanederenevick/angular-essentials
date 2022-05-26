@@ -1,11 +1,11 @@
-<form>
-  <div class="mb-3">
+<form class="border border-secondary rounded p-3 bg-light">
+  <div class="mb-3 w-50">
     <label for="name" class="form-label">Character Name</label>
     <input type="text" id="name" name="name" class="form-control">
   </div>
   <div class="mb-3">
     <label for="side" class="form-label">Choose Side</label>
-    <select name="side" id="side" class="form-select">
+    <select name="side" id="side" class="form-select w-25">
       <option *ngFor="let option of availableSides" [value]="option.value">
         {{ option.display }}
       </option>
