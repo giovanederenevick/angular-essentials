@@ -1,15 +1,19 @@
-<form class="border border-secondary rounded p-3 bg-light">
-  <div class="mb-3 w-50">
-    <label for="name" class="form-label">Character Name</label>
-    <input type="text" id="name" name="name" class="form-control">
+<form class="border border-secondary rounded p-3 bg-light" (ngSubmit)="onSubmit()">
+  <div class="row mb-4">
+    <div class="col-xs-12 col-sm-8">
+      <label for="name" class="form-label">Character Name</label>
+      <input type="text" id="name" name="name" class="form-control" ngModel>
+    </div>
   </div>
-  <div class="mb-3">
-    <label for="side" class="form-label">Choose Side</label>
-    <select name="side" id="side" class="form-select w-25">
-      <option *ngFor="let option of availableSides" [value]="option.value">
-        {{ option.display }}
-      </option>
-    </select>
+  <div class="row mb-4">
+    <div class="col-xs-12 col-sm-12">
+      <label for="side" class="form-label">Choose Side</label>
+      <select name="side" id="side" class="form-select w-25" ngModel>
+        <option *ngFor="let option of availableSides" [value]="option.value">
+          {{ option.display }}
+        </option>
+      </select>
+    </div>
   </div>
   <button class="btn btn-primary" type="submit">Add Character</button>
 </form>
