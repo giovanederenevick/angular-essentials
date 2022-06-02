@@ -1,3 +1,4 @@
+import { StarWarsService } from './../star-wars.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -22,12 +23,17 @@ export class CreateCharacterComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  starWarsService: StarWarsService
+
+  constructor(starWarsService: StarWarsService) {
+    this.starWarsService = starWarsService
+   }
 
   ngOnInit(): void {
   }
 
-  onSubmit() {
-    console.log("On submit")
+  onSubmit(submittedForm: any) {
+    console.log(submittedForm.value)
+    this.starWarsService.addCharacter(submittedForm.value.name, submittedForm.value.side)
   }
 }
