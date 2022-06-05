@@ -33,6 +33,9 @@ export class CreateCharacterComponent implements OnInit {
   }
 
   onSubmit(submittedForm: any) {
+    if (submittedForm.invalid) {
+      return
+    }
     console.log(submittedForm.value)
     this.starWarsService.addCharacter(submittedForm.value.name, submittedForm.value.side)
   }
